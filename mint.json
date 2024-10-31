@@ -69,12 +69,6 @@
       ]
     },
     {
-      "group": "a",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
       "group": "Endpoint Examples",
       "pages": [
         "api-reference/endpoint/get",
