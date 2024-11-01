@@ -64,10 +64,10 @@
           "requestBody": {
             "description": "Plant to add to the store",
             "content": {
-              "application/json": {
-                  "username": "admin",
-                  "password": "testPassword",
-                  "provider": "db"
+              "schema": {
+                "username": "admin",
+                "password": "testPassword",
+                "provider": "db"
               }
             },
             "required": true
@@ -76,8 +76,9 @@
             "200": {
               "description": "plant response",
               "content": {
-                "application/json":
-                  {"access_token": "ey......"}
+                "schema": {
+                  "access_token": "ey......"
+                }
               }
             },
             "400": {
