@@ -11,24 +11,24 @@ description: "Добавление транзакции мерчанта"
 
 ## Request Body Schema
 | Field | Type | Required | Description | Constrains |
-| ```amount``` | number | Yes | Transaction amount | >0 |
-| ```card``` | integer | Yes | Card identifier | Positive integer |
-| ```changed_by``` | integer | Yes | User ID who modified the transaction | Positive Integer |
-| ```changed_on``` | string | Yes | Last modification timestamp | ISO 8601 format |
-| ```created_by``` | integer | Yes | User ID who created the transaction | Positive integer |
-| ```created_on``` | string | Yes | Transaction creation timestamp | ISO 8601 format |
-| ```currency``` | integer | Yes | Currency identifier | Predefined currency code |
-| ```currency_rate``` | number | Yes | Currency exchange rate | >= 1.0 |
-| ```merchant``` | number | Yes | Merchant identifier | Positive integer |
-| ```merchant_order_id``` | integer | Yes | Merchant's internal order reference | Unique within merchant's system |
+| ```amount```               | number  | Yes | Transaction amount | >0 |
+| ```card```                 | integer | Yes | Card identifier | Positive integer |
+| ```changed_by```           | integer | Yes | User ID who modified the transaction | Positive Integer |
+| ```changed_on```           | string  | Yes | Last modification timestamp | ISO 8601 format |
+| ```created_by```           | integer | Yes | User ID who created the transaction | Positive integer |
+| ```created_on```           | string  | Yes | Transaction creation timestamp | ISO 8601 format |
+| ```currency```             | integer | Yes | Currency identifier | Predefined currency code |
+| ```currency_rate```        | number  | Yes | Currency exchange rate | >= 1.0 |
+| ```merchant```             | number  | Yes | Merchant identifier | Positive integer |
+| ```merchant_order_id```    | integer | Yes | Merchant's internal order reference | Unique within merchant's system |
 | ```merchant_payload``` | string/null | No | Additional merchant-specific data | Optional |
-| ```order_group_id``` | string/null | Yes | Group identifier for related orders | . |
-| ```order_id``` | number | Yes | Unique order identifier |  . |
+| ```order_group_id``` | string/null | Yes | Group identifier for related orders | nothing |
+| ```order_id``` | number | Yes | Unique order identifier | nothing |
 | ```reciept_link``` | number | Yes | URL to transaction receipt | Valid URL or empty string |
 | ```status``` | number | Yes | Transaction status code | See Status Codes |
 | ```team``` | number | Yes | Team identifier | Positive integer |
 | ```type``` | number | Yes | Transaction type | See Transaction Types |
-| ```username``` | number | Yes | User associated with transaction | . |
+| ```username``` | number | Yes | User associated with transaction | nothing |
 
 ## Example Request
 ```cURL
