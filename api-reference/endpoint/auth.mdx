@@ -50,6 +50,7 @@ POST /api/v1/security/login
 
 ## Response
 <RequestExample>
+<CodeGroup>
 ```bash Example Request
 curl -X POST https://api.example.com/api/v1/security/login \
   -H "Content-Type: application/json" \
@@ -59,8 +60,7 @@ curl -X POST https://api.example.com/api/v1/security/login \
     "provider": "db"
   }'
 ```
-</RequestExample>
-<RequestExample>
+
 ```javascript Example Request
 const response = await fetch('https://api.example.com/api/v1/security/login', {
   method: 'POST',
@@ -78,6 +78,7 @@ const data = await response.json();
 // Use the token in subsequent requests
 const token = data.access_token;
 ```
+</CodeGroup>
 </RequestExample>
 
 <ResponseField name="access_token" type="ey......">
