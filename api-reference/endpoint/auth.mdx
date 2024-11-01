@@ -74,4 +74,19 @@ const data = await response.json();
 // Use the token in subsequent requests
 const token = data.access_token;
 ```
+
+```python Python
+import requests
+
+response = requests.post(
+    'https://api.example.com/api/v1/security/login',
+    json={
+        'username': 'admin',
+        'password': 'testPassword',
+        'provider': 'db'
+    }
+)
+
+token = response.json()['access_token']
+```
 </CodeGroup>
