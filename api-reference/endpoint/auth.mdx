@@ -60,6 +60,25 @@ curl -X POST https://api.example.com/api/v1/security/login \
   }'
 ```
 </RequestExample>
+<RequestExample>
+```javascript Example Request
+const response = await fetch('https://api.example.com/api/v1/security/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    username: 'admin',
+    password: 'testPassword',
+    provider: 'db'
+  }),
+});
+
+const data = await response.json();
+// Use the token in subsequent requests
+const token = data.access_token;
+```
+</RequestExample>
 
 <ResponseField name="access_token" type="ey......">
     This is ...
