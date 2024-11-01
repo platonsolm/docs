@@ -30,20 +30,6 @@ POST /api/v1/security/login
 <ParamField body="provider" type="string">
     provider
 </ParamField>
-## Response
-
-<CodeGroup>
-```json Response
-{
-    "access_token": "ey......"
-}
-```
-| Parameter | Type | Description |
-|----------|-------|-------------|
-| ```access_token``` | string | JWT token to be used for authentication |
-
-</CodeGroup>
-
 
 ## Request
 <CodeGroup>
@@ -90,3 +76,25 @@ response = requests.post(
 token = response.json()['access_token']
 ```
 </CodeGroup>
+
+## Response
+
+<CodeGroup>
+```json Response
+{
+    "access_token": "ey......"
+}
+```
+| Parameter | Type | Description |
+|----------|-------|-------------|
+| ```access_token``` | string | JWT token to be used for authentication |
+
+</CodeGroup>
+
+## Example Error Response
+``` json
+{
+    "error": "Invalid credentials",
+    "status_code": 401
+}
+```
