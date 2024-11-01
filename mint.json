@@ -42,6 +42,7 @@
         "api-reference/endpoint/auth",
         "api-reference/endpoint/get",
         "api-reference/endpoint/transactions",
+        "api-reference/endpoint/add",
         "api-reference/endpoint/delete"
       ]
     }
