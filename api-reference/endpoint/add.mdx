@@ -3,3 +3,65 @@ title: 'Add Merchant Transaction'
 api: POST /api/v1/transaction/manage/new/{merchant_token}
 description: "Добавление транзакции мерчанта"
 ---
+
+## Path Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+```merchant_token```| string | Yes | Unique token authenticating the merchant|
+
+## Request Body Schema
+| Field | Type | Required | Description | Constrains |
+| ```amount``` | number | Yes | Transaction amount | >0 |
+| ```card``` | integer | Yes | Card identifier | Positive integer |
+| ```changed_by``` | integer | Yes | User ID who modified the transaction | Positive Integer |
+| ```changed_on``` | string | Yes | Last modification timestamp | ISO 8601 format |
+| ```created_by``` | integer | Yes | User ID who created the transaction | Positive integer |
+| ```created_on``` | string | Yes | Transaction creation timestamp | ISO 8601 format |
+| ```currency``` | integer | Yes | Currency identifier | Predefined currency code |
+| ```currency_rate``` | number | Yes | Currency exchange rate | >= 1.0 |
+| ```merchant``` | number | Yes | Merchant identifier | Positive integer |
+| ```merchant_order_id``` | integer | Yes | Merchant's internal order reference | Unique within merchant's system |
+| ```merchant_payload``` | string/null | No | Additional merchant-specific data | Optional |
+| ```order_group_id``` | string/null | Yes | Group identifier for related orders |  |
+| ```order_id``` | number | Yes | Unique order identifier |  |
+| ```reciept_link``` | number | Yes | URL to transaction receipt | Valid URL or empty string |
+| ```status``` | number | Yes | Transaction status code | See Status Codes |
+| ```team``` | number | Yes | Team identifier | Positive integer |
+| ```type``` | number | Yes | Transaction type | See Transaction Types |
+| ```username``` | number | Yes | User associated with transaction |  |
+
+## Example Request
+```cURL
+curl -X POST \
+  https://api.example.com/api/v1/transaction/manage/new/YOUR_MERCHANT_TOKEN \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "amount": 111111.0,
+    "card": 1,
+    "changed_by": 1,
+    "changed_on": "2024-10-03T13:55:34.200673",
+    "created_by": 1,
+    "created_on": "2024-10-08T16:08:00",
+    "currency": 3,
+    "currency_rate": 1.0,
+    "merchant": 1,
+    "merchant_order_id": "1",
+    "merchant_payload": null,
+    "order_group_id": "1",
+    "order_id": "1",
+    "reciept_link": "",
+    "status": 2,
+    "team": 1,
+    "type": 1,
+    "username": "test1"
+}'
+```
+
+## Successful Response
+```json
+{
+    "transaction_id": "UNIQUE_SYSTEM_GENERATED_ID",
+    "status": "CREATED",
+    "message": "Transaction successfully initiated"
+}
+```
