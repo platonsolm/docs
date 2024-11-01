@@ -39,5 +39,62 @@ GET /api/v1/merchant/{id}
 
 | Field | Type | Required |Description |
 |----------|-------|----------|-------------|
-| ```address```  | string  | Yes  | Unique identifier of the merchant |
-| ```callback_url``` | string | Yes | URL that receives transaction notifications
+| ```address```  | string  | Yes  | Physical or registered address of the merchant |
+| ```callback_url``` | string | Yes | URL that receives transaction notifications |
+| ```cents_allowed``` | boolean | Yes | Indicates if cents/decimal amounts are allowed in transactions |
+| ```changed_on``` | string | Yes | Timestamp of the last modification (ISO 8601 format) |
+| ```created_on``` | string | Yes | Timestamp when the merchant was created (ISO 8601 format) |
+| ```display_name``` | string | Yes | Human-readable name of the merchant |
+| ```fs_uniquifier``` | string | Yes | Unique identifier for file system operations |
+| ```name``` | string | Yes | Machine-readable merchant identifier |
+| ```registration_date``` | string | Yes | Date when the merchant was registered (YYYY-MM-DD format) |
+| ```return_urls``` | string | Yes | JSON string containing return URLs configuration |
+| ```secret_key``` | string | Yes | Secret key used for API authentication |
+
+## Request
+<CodeGroup>
+```cURL cURL
+curl -X POST https://api.example.com/api/v1/security/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "password": "testPassword",
+    "provider": "db"
+  }'
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.example.com/api/v1/security/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    username: 'admin',
+    password: 'testPassword',
+    provider: 'db'
+  }),
+});
+
+const data = await response.json();
+// Use the token in subsequent requests
+const token = data.access_token;
+```
+
+```python Python
+import requests
+
+response = requests.post(
+    'https://api.example.com/api/v1/security/login',
+    json={
+        'username': 'admin',
+        'password': 'testPassword',
+        'provider': 'db'
+    }
+)
+
+token = response.json()['access_token']
+```
+</CodeGroup>
+
+## Response
