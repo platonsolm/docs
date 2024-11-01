@@ -46,50 +46,27 @@ Retrieves detailed information about a specific merchant by their ID.
 | ```return_urls``` | string | Yes | JSON string containing return URLs configuration |
 | ```secret_key``` | string | Yes | Secret key used for API authentication |
 
-## Request
+## Example Request
 <CodeGroup>
 ```cURL cURL
-curl -X POST https://api.example.com/api/v1/security/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "admin",
-    "password": "testPassword",
-    "provider": "db"
-  }'
-```
-
-```javascript JavaScript
-const response = await fetch('https://api.example.com/api/v1/security/login', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    username: 'admin',
-    password: 'testPassword',
-    provider: 'db'
-  }),
-});
-
-const data = await response.json();
-// Use the token in subsequent requests
-const token = data.access_token;
-```
-
-```python Python
-import requests
-
-response = requests.post(
-    'https://api.example.com/api/v1/security/login',
-    json={
-        'username': 'admin',
-        'password': 'testPassword',
-        'provider': 'db'
-    }
-)
-
-token = response.json()['access_token']
+curl -X GET \
+  https://api.example.com/api/v1/merchant/12345
 ```
 </CodeGroup>
 
-## Response
+## Example Response
+```json
+{
+    "address": "test address",
+    "callback_url": "http://188.120.228.134:8000/success",
+    "cents_allowed": true,
+    "changed_on": "2024-10-07T22:15:25",
+    "created_on": "2024-10-02T06:54:00",
+    "display_name": "Test Merchant",
+    "fs_uniquifier": "647af1efd32f4f2986d2109f52a1a55f",
+    "name": "test-merchant",
+    "registration_date": "2024-10-02",
+    "return_urls": "{}",
+    "secret_key": "test-secret"
+}
+```
