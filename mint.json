@@ -37,6 +37,12 @@
       ]
     },
     {
+      "group": "API",
+      "pages": [
+        "api-merchant/auth"
+      ]
+    },
+    {
       "group": "Endpoint Examples",
       "pages": [
         "api-reference/endpoint/get-info",
@@ -44,12 +50,6 @@
         "api-reference/endpoint/add",
         "api-reference/endpoint/delete"
       ]
-    },
-    {
-    "group": "API",
-    "pages": [
-      "api-merchant/auth"
-    ]
-  }
+    }
   ]
 }
