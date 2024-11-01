@@ -19,6 +19,17 @@ POST /api/v1/security/login
 | ```password``` | string  | yes  | Your password |
 | ```provider``` | string | yes  | Authentication provider (use "db") |
 
+<ParamField body="username" type="string">
+    username
+</ParamField>
+
+<ParamField body="password" type="string">
+    password
+</ParamField>
+
+<ParamField body="provider" type="string">
+    provider
+</ParamField>
 ## Response
 
 <CodeGroup>
@@ -33,19 +44,8 @@ POST /api/v1/security/login
 
 </CodeGroup>
 
-<ParamField body="username" type="string">
-    username
-</ParamField>
 
-<ParamField body="password" type="string">
-    password
-</ParamField>
-
-<ParamField body="provider" type="string">
-    provider
-</ParamField>
-
-## Response
+## Request
 <CodeGroup>
 ```cURL cURL
 curl -X POST https://api.example.com/api/v1/security/login \
