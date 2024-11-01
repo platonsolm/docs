@@ -12,10 +12,11 @@ POST /api/v1/security/login
 
 ## Request Body
 
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Value 1  | Value 2  | Value 3  |
-| Value 4  | Value 5  | Value 6  |
+| Parameter | Type | Required | Description |
+|----------|-------|----------|-------------|
+| ```username```  | string  | yes  | Your username |
+| ```password``` | string  | yes  | Your password |
+| ```provider``` | string | yes  | Authentication provider (use "db") |
 
 
 <ParamField body="username" type="string">
