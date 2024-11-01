@@ -12,12 +12,11 @@ POST /api/v1/security/login
 ```
 
 ## Request Body
-
 | Parameter | Type | Required | Description |
 |----------|-------|----------|-------------|
-| ```username```  | string  | yes  | Your username |
-| ```password``` | string  | yes  | Your password |
-| ```provider``` | string | yes  | Authentication provider (use "db") |
+| ```username```  | string  | Yes  | Your username |
+| ```password``` | string  | Yes  | Your password |
+| ```provider``` | string | Yes  | Authentication provider (use "db") |
 
 <ParamField body="username" type="string">
     Create your mechant username
@@ -85,9 +84,9 @@ token = response.json()['access_token']
     "access_token": "ey......"
 }
 ```
-| Parameter | Type | Description |
+| Parameter | Type | Required | Description |
 |----------|-------|-------------|
-| ```access_token``` | string | JWT token to be used for authentication |
+| ```access_token``` | string | Yes | JWT token to be used for authentication |
 
 </CodeGroup>
 

@@ -3,3 +3,41 @@ title: 'GET Merchant Info'
 api: /api/v1/merchant/{id}
 description: "Получение информации об определенном мерчанте"
 ---
+
+## Get Merchant Detais
+Retrieves detailed information about a specific merchant by their ID.
+
+## Endpoint
+
+```
+GET /api/v1/merchant/{id}
+```
+
+## Path Parameters
+| Parameter | Type | Required | Description |
+|----------|-------|----------|-------------|
+| ```id```  | string  | Yes  | Unique identifier of the merchant |
+
+## Response
+```json
+{
+    "address": string,
+    "callback_url": string,
+    "cents_allowed": boolean,
+    "changed_on": string (ISO 8601 datetime),
+    "created_on": string (ISO 8601 datetime),
+    "display_name": string,
+    "fs_uniquifier": string,
+    "name": string,
+    "registration_date": string (YYYY-MM-DD),
+    "return_urls": string (JSON),
+    "secret_key": string
+}
+```
+
+## Response Fields
+
+| Field | Type | Required |Description |
+|----------|-------|----------|-------------|
+| ```address```  | string  | Yes  | Unique identifier of the merchant |
+| ```callback_url``` | string | Yes | URL that receives transaction notifications
