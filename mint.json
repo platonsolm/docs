@@ -39,12 +39,17 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/auth",
         "api-reference/endpoint/get-info",
         "api-reference/endpoint/transactions",
         "api-reference/endpoint/add",
         "api-reference/endpoint/delete"
       ]
-    }
+    },
+    {
+    "group": "API",
+    "pages": [
+      "api-merchant/auth"
+    ]
+  }
   ]
 }
