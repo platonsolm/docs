@@ -1,0 +1,86 @@
+---
+title: 'Get Merchant Transactions'
+api: GET /api/v1/transaction/manage/merchant/<merchant_token>
+description: "Получение списка транзакций определенного мерчанта"
+---
+
+## Get Merchant Transactions
+Retrieves a list of transactions for a specific merchant.
+
+
+## Path Parameters
+
+| Parameter | Type | Required | Description |
+|----------|-------|----------|-------------|
+| ```id```  | string  | Yes  | Unique identifier of the merchant |
+
+## Request Body
+
+| Parameter | Type | Required | Description |
+|----------|-------|----------|-------------|
+| ```amount``` | number  | Transaction amount |
+| ```card``` | integer  | Card identifier |
+| ```changed_by``` | integer  | ID of user who last modified the transaction |
+| ```changed_on``` | string  | Timestamp of last modification (ISO 8601) |
+| ```created_by``` | integer  | ID of user who created the transaction |
+| ```created_on``` | string | Creation timestamp (ISO 8601) |
+| ```currency``` | integer | Currency identifier |
+| ```currency_rate``` | number | Exchange rate applied to the transaction |
+| ```merchant```  | integer | Merchant identifier |
+| ```merchant_order_id``` | string | Merchant's internal order ID |
+| ```merchant_payload``` | string  | Additional merchant data (nullable) |
+| ```order_group_id```  | string | Group identifier for related orders |
+| ```order_id```  | string | Unique order identifier |
+| ```reciept_link```  | string | URL to transaction receipt |
+| ```status```  | integer | Transaction status code |
+| ```team```  | integer | Unique identifier of the merchant |
+| ```type```  | integer | Transaction type code |
+| ```username```  | string | Username associated with transaction |
+
+## Example Request
+
+<CodeGroup>
+```cURL cURL
+curl -X PUT \
+  https://api.example.com/api/v1/merchant/transaction/123 \
+  -H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "amount": 111111.0,
+    "card": 1,
+    "changed_by": 1,
+    "changed_on": "2024-10-03T13:55:34.200673",
+    "created_by": 1,
+    "created_on": "2024-10-08T16:08:00",
+    "currency": 3,
+    "currency_rate": 1.0,
+    "merchant": 1,
+    "merchant_order_id": "1",
+    "merchant_payload": null,
+    "order_group_id": "1",
+    "order_id": "1",
+    "reciept_link": "",
+    "status": 2,
+    "team": 1,
+    "type": 1,
+    "username": "test1"
+}'
+```
+</CodeGroup>
+
+## Response Example
+```json
+{
+    "address": "test address",
+    "callback_url": "http://188.120.228.134:8000/success",
+    "cents_allowed": true,
+    "changed_on": "2024-10-07T22:15:25",
+    "created_on": "2024-10-02T06:54:00",
+    "display_name": "Test Merchant",
+    "fs_uniquifier": "647af1efd32f4f2986d2109f52a1a55f",
+    "name": "test-merchant",
+    "registration_date": "2024-10-02",
+    "return_urls": "{}",
+    "secret_key": "test-secret"
+}
+```
