@@ -19,7 +19,11 @@ description: "API Authorization"
 ## Response
 <RequestExample>
 ```json
-POST api/v1/security/login
+{
+  "username": "admin",
+  "password": "testPassword",
+  "provider": "db"
+}
 ```
 </RequestExample>
 
