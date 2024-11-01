@@ -1,5 +1,18 @@
 ---
 title: 'API Authorization'
 api: 'POST api/v1/security/login'
-description: "APU Authorization"
+description: "API Authorization"
 ---
+
+## Body
+<ParamField body="username" type="admin">
+    username
+</ParamField>
+
+<ParamField body="password" type="testPassword">
+    password
+</ParamField>
+
+<ParamField body="provider" type="db">
+    provider
+</ParamField>
