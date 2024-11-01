@@ -26,13 +26,13 @@
       ]
     },
     {
-      "group": "Авторизацияx",
+      "group": "Авторизация",
       "pages": [
         "api-merchant/auth"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Мерчанты",
       "pages": [
         "api-reference/endpoint/get-info",
         "api-reference/endpoint/transactions",
