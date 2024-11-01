@@ -66,11 +66,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": {
-                    "username": "admin",
-                    "password": "testPassword",
-                    "provider": "db"
-                }
+                  "$ref": "#/components/schemas/NewPlant"
                 }
               }
             },
