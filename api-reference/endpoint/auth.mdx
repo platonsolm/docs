@@ -50,12 +50,14 @@ POST /api/v1/security/login
 
 ## Response
 <RequestExample>
-```json
-{
-  "username": "admin",
-  "password": "testPassword",
-  "provider": "db"
-}
+```bash Example Request
+curl -X POST https://api.example.com/api/v1/security/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "password": "testPassword",
+    "provider": "db"
+  }'
 ```
 </RequestExample>
 
