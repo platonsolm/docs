@@ -32,19 +32,19 @@ Retrieves detailed information about a specific merchant by their ID.
 
 ## Response Fields
 
-| Field | Type | Required |Description |
+| Field | Type | Description |
 |----------|-------|----------|-------------|
-| ```address```  | string  | Yes  | Physical or registered address of the merchant |
-| ```callback_url``` | string | Yes | URL that receives transaction notifications |
-| ```cents_allowed``` | boolean | Yes | Indicates if cents/decimal amounts are allowed in transactions |
-| ```changed_on``` | string | Yes | Timestamp of the last modification (ISO 8601 format) |
-| ```created_on``` | string | Yes | Timestamp when the merchant was created (ISO 8601 format) |
-| ```display_name``` | string | Yes | Human-readable name of the merchant |
-| ```fs_uniquifier``` | string | Yes | Unique identifier for file system operations |
+| ```address```  | string | Physical or registered address of the merchant |
+| ```callback_url``` | string | URL that receives transaction notifications |
+| ```cents_allowed``` | boolean | Indicates if cents/decimal amounts are allowed in transactions |
+| ```changed_on``` | string | Timestamp of the last modification (ISO 8601 format) |
+| ```created_on``` | string | Timestamp when the merchant was created (ISO 8601 format) |
+| ```display_name``` | string | Human-readable name of the merchant |
+| ```fs_uniquifier``` | string | Unique identifier for file system operations |
 | ```name``` | string | Yes | Machine-readable merchant identifier |
-| ```registration_date``` | string | Yes | Date when the merchant was registered (YYYY-MM-DD format) |
-| ```return_urls``` | string | Yes | JSON string containing return URLs configuration |
-| ```secret_key``` | string | Yes | Secret key used for API authentication |
+| ```registration_date``` | string | Date when the merchant was registered (YYYY-MM-DD format) |
+| ```return_urls``` | string | JSON string containing return URLs configuration |
+| ```secret_key``` | string  | Secret key used for API authentication |
 
 ## Example Request
 <CodeGroup>
