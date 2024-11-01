@@ -19,6 +19,18 @@ POST /api/v1/security/login
 | ```provider``` | string | yes  | Authentication provider (use "db") |
 
 ## Response
+
+<CodeGroup>
+```json Response
+{
+    "access_token": "ey......"
+}
+```
+| Parameter | Type | Description |
+|----------|-------|----------|-------------|
+| ```access_token``` | string | JWT token to be used for authentication |
+
+</CodeGroup>
 <ResponseField name="success" type="string">
     Indicates
 </ResponseField>
