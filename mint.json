@@ -41,6 +41,7 @@
       "pages": [
         "api-reference/endpoint/auth",
         "api-reference/endpoint/get",
+        "api-reference/endpoint/transactions",
         "api-reference/endpoint/delete"
       ]
     }
